@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Gujarat traffic tracking
+{% endblock %}
+
+{% block content %}
+<table class="table table-hover table-dark">
+  <thead>
+      <tr>
+          <!-- Your Columns HERE -->
+          <th scope="col">ID</th>
+          <th scope="col">Location</th>
+          <th scope="col">Status</th>
+          <th scope="col">changestatus</th>
+          <th scope="col">vehicle Count</th>
+          
+      </tr>
+  </thead>
+  <tbody>
+      <!-- Your rows inside the table HERE: -->
+      {% for item in items %}
+          <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.location}}</td>
+              <td>{{ item.status }}</td>
+              <td>
+              
+                  <button class="btn btn-outline btn-success">Open signal</button>
+                  <button class="btn btn-outline btn-danger">close signal</button>
+              </td>
+              <td>{{ item.vehicles_count}}</td>
+          </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
